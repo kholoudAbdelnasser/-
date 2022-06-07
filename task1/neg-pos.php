@@ -1,12 +1,12 @@
 <?php
 
-if($_GET){
+if($_POST){
   
 
 
-    if($_GET['number1'] > 0){
+    if($_POST['number1'] > 0){
         $num="THE NUMBER IS POSITIVE";
-    }elseif($_GET['number1']<0){
+    }elseif($_POST['number1']<0){
         $num="THE NUMBER IS NEGATIVE";
     }
     
@@ -35,7 +35,7 @@ if($_GET){
                 </div>
             </div>
             <div class="col-6 offset-3">
-                <form  method="get">
+                <form  method="POST">
                     <div class="form-group">
                         <label for="Name">number</label>
                         <input type="number" name="number1" id="Name" class="form-control" placeholder="" aria-describedby="helpId">

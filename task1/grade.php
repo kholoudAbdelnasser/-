@@ -1,9 +1,9 @@
 <?php
 $sum=0;
 $avr=0;
-if($_GET){
+if($_POST){
  
-$sum+=$_GET['grad1'] + $_GET['grad2'] + $_GET['grad3'] + $_GET['grad4'] + $_GET['grad5'] ;
+$sum+=$_POST['grad1'] + $_POST['grad2'] + $_POST['grad3'] + $_POST['grad4'] + $_POST['grad5'] ;
 $avr1=$sum / 500;
 $avr=$avr1 * 100;
 
@@ -54,7 +54,7 @@ elseif($avr>=40){
                 </div>
             </div>
             <div class="col-6 offset-3">
-                <form  method="get">
+                <form  method="post">
                     <div class="form-group">
                         <label for="Name">physics</label>
                         <input type="number" name="grad1" id="Name" class="form-control" placeholder="" aria-describedby="helpId">

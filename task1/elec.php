@@ -1,28 +1,28 @@
 <?php
 
-if($_GET){
+if($_POST){
   
 
 
-    if($_GET['number1'] <=50){
-        $x=$_GET['number1'];
+    if($_POST['number1'] <=50){
+        $x=$_POST['number1'];
         $elec=$x*0.5;
         $elecwithtaxs1=$elec*0.2;
         $elecwithtaxs=$elec+$elecwithtaxs1;
-    }elseif($_GET['number1'] <=100){
-        $x=$_GET['number1'];
+    }elseif($_POST['number1'] <=100){
+        $x=$_POST['number1'];
         $elec=$x*0.75;
         $elecwithtaxs1=$elec*0.2;
         $elecwithtaxs=$elec+$elecwithtaxs1;
     }
-    elseif($_GET['number1'] >=100){
-        $x=$_GET['number1'];
+    elseif($_POST['number1'] >=100){
+        $x=$_POST['number1'];
         $elec=$x*1.2;
         $elecwithtaxs1=$elec*0.2;
         $elecwithtaxs=$elec+$elecwithtaxs1;
     }
-    elseif($_GET['number1'] >=250){
-        $x=$_GET['number1'];
+    elseif($_POST['number1'] >=250){
+        $x=$_POST['number1'];
         $elec=$x*1.5;
         $elecwithtaxs1=$elec*0.2;
         $elecwithtaxs=$elec+$elecwithtaxs1;
@@ -53,7 +53,7 @@ if($_GET){
                 </div>
             </div>
             <div class="col-6 offset-3">
-                <form  method="get">
+                <form  method="post">
                     <div class="form-group">
                         <label for="Name">electrcite</label>
                         <input type="number" name="number1" id="Name" class="form-control" placeholder="" aria-describedby="helpId">

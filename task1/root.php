@@ -1,14 +1,16 @@
 <?php
 
-if($_GET){
+if($_POST){
   
 
 
-    $_GET['number1']% 2== 0){
-        $num="THE NUMBER IS even";
-    }elseif($_GET['number1']% 2 !=0){
-        $num="THE NUMBER IS odd";
-    }
+    // $_POST['number1']% 2== 0){
+    //     $num="THE NUMBER IS even";
+    // }elseif($_POST['number1']% 2 !=0){
+    //     $num="THE NUMBER IS odd";
+    // }
+    $res1=1/$_POST['power'];
+   $res= $_POST['number1'] ** $res1;
     
 };
 
@@ -35,7 +37,7 @@ if($_GET){
                 </div>
             </div>
             <div class="col-6 offset-3">
-                <form  method="get">
+                <form  method="POST">
                     <div class="form-group">
                         <label for="Name">number</label>
                         <input type="number" name="number1" id="Name" class="form-control" placeholder="" aria-describedby="helpId">
@@ -51,7 +53,7 @@ if($_GET){
             <div class="col-6 m-auto  my-5">
                 <div class="container">
                 <div class="h6 text-center border py-3 bg-info  text-dark">
-                <?php if(isset($num)){echo $num;} ?>
+                <?php if(isset($res)){echo $res;} ?>
              
                 </div>
                 

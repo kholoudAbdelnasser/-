@@ -1,20 +1,20 @@
 <?php
 
-if($_GET){
-    if($_GET['number1'] > $_GET['number2']   &&$_GET['number1']>$_GET['number3']){
-        $max =" THE MAX NUMBER IS:{$_GET['number1']}";
-    }elseif($_GET['number2']>$_GET['number1']&&$_GET['number2']>$_GET['number3']){
-        $max =" THE MAX NUMBER IS:{$_GET['number2']}";
-    }elseif($_GET['number3']>$_GET['number2']&&$_GET['number3']>$_GET['number1']){
-        $max =" THE MAX NUMBER IS:{$_GET['number3']}";
+if ($_POST) {
+    if ($_POST['number1'] > $_POST['number2']   && $_POST['number1'] > $_POST['number3']) {
+        $max = " THE MAX NUMBER IS:{$_POST['number1']}";
+    } elseif ($_POST['number2'] > $_POST['number1'] && $_POST['number2'] > $_POST['number3']) {
+        $max = " THE MAX NUMBER IS:{$_POST['number2']}";
+    } elseif ($_POST['number3'] > $_POST['number2'] && $_POST['number3'] > $_POST['number1']) {
+        $max = " THE MAX NUMBER IS:{$_POST['number3']}";
     }
 
-    if($_GET['number1'] < $_GET['number2']   &&$_GET['number1']<$_GET['number3']){
-        $min =" THE Min NUMBER IS:{$_GET['number1']}";
-    }elseif($_GET['number2']<$_GET['number1']&&$_GET['number2']<$_GET['number3']){
-        $min =" THE Min NUMBER IS:{$_GET['number2']}";
-    }elseif($_GET['number3']<$_GET['number2']&&$_GET['number3']<$_GET['number1']){
-        $min =" THE Min NUMBER IS:{$_GET['number3']}";
+    if ($_POST['number1'] < $_POST['number2']   && $_POST['number1'] < $_POST['number3']) {
+        $min = " THE Min NUMBER IS:{$_POST['number1']}";
+    } elseif ($_POST['number2'] < $_POST['number1'] && $_POST['number2'] < $_POST['number3']) {
+        $min = " THE Min NUMBER IS:{$_POST['number2']}";
+    } elseif ($_POST['number3'] < $_POST['number2'] && $_POST['number3'] < $_POST['number1']) {
+        $min = " THE Min NUMBER IS:{$_POST['number3']}";
     }
 };
 
@@ -41,7 +41,7 @@ if($_GET){
                 </div>
             </div>
             <div class="col-6 offset-3">
-                <form  method="get">
+                <form method="post">
                     <div class="form-group">
                         <label for="Name">num1</label>
                         <input type="number" name="number1" id="Name" class="form-control" placeholder="" aria-describedby="helpId">
@@ -57,18 +57,22 @@ if($_GET){
                     <button class="btn btn-outline-dark btn-sm"> chick </button>
                 </form>
             </div>
-        
+
             <div class="col-12 my-5 text-center">
                 <div class="h6 text-center text-dark ">
-                <?php if(isset($max)){echo $max;} ?>
-              <br>
-              <?php if(isset($min)){echo $min;} ?>
+                    <?php if (isset($max)) {
+                        echo $max;
+                    } ?>
+                    <br>
+                    <?php if (isset($min)) {
+                        echo $min;
+                    } ?>
                 </div>
-                
-              
-                </div>
-</div>
-        
+
+
+            </div>
+        </div>
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
