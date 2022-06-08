@@ -5,7 +5,7 @@
 // check if gender of user == m ==> male 1
 // check if gender of user == f ==> female 1
 
-
+//kh
 // collection => laravel => array of objects
 $users = [
     (object)[
