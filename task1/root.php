@@ -4,11 +4,7 @@ if($_POST){
   
 
 
-    // $_POST['number1']% 2== 0){
-    //     $num="THE NUMBER IS even";
-    // }elseif($_POST['number1']% 2 !=0){
-    //     $num="THE NUMBER IS odd";
-    // }
+    
     $res1=1/$_POST['power'];
    $res= $_POST['number1'] ** $res1;
     
