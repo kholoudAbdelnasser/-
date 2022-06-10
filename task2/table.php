@@ -5,8 +5,9 @@
 // check if gender of user == m ==> male 1
 // check if gender of user == f ==> female 1
 
-//kh
+
 // collection => laravel => array of objects
+//new
 $users = [
     (object)[
         'id' => 1,
@@ -20,9 +21,8 @@ $users = [
         'activities' => [
             "school" => 'drawing',
             'home' => 'painting'
-        ],
-       
-    
+        ]
+        
     ],
     (object)[
         'id' => 2,
@@ -52,11 +52,55 @@ $users = [
             "school" => 'painting',
             'home' => 'drawing'
         ]
-       
 
     ],
-
 ];
+$table =  "<table class='table' >
+<thead>";
+
+foreach($users[0] as $prorty=>$values){ 
+     
+ $table .="<th>{$prorty}<th>";
+}
+$table .=  "<thead>
+<tbody>";
+foreach($users as $index=>$user){ 
+     
+    $table .="<tr>";
+    foreach($user as $prorty=>$value){
+        
+
+    if(gettype($value) == 'array' || gettype($value) == 'object'){
+        $table .="<td>";
+foreach($value as $indexorprort=>$newvalue){
+    if($indexorprort=='gender' && $newvalue=='m')
+    {
+        $newvalue ='male';
+    }
+    elseif($indexorprort=='gender' && $newvalue=='f'){
+        $newvalue ='female';
+    }
+    $table .=$newvalue .' ,';
+}
+$table .="<td> ";
+    }
+    else{
+    
+        $table .="<td>{$value}<td>";
+
+    }
+
+     
+    }
+    $table .="<tr>";
+   }
+    
+ $table .= "<tbody>
+<table>"
+
+
+
+
 
 ?>
 
@@ -71,58 +115,7 @@ $users = [
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <table class="table table-bordered" >
-        <thead>
-       
-                <tr>
-              
-                   
-                    <?php   foreach($users[0] as $key=>$user) { ?>
-
-                    <th><?= "$key"?></th>
- <?php }?>
-
-                </tr>
-              
-        </thead>
-        <tbody>
-        <?php  foreach($users as $key=> $user) { ?>
-            <tr>
-           
-                
-<td><?=  "{$user->id}"?></td>
-<td><?= "{$user->name }"?></td>
-
- <td><?php
-                                foreach ($user->gender  as $key=> $genders) {
-                                    if($genders=='m'){
-                                   print_r( "male <br>");
-                                    }else
-                                    print_r( "female <br>");
-                                }
-                            ?>
-<?php ?></td>
-<td>
-    <?php 
-    foreach ($user->hobbies as $key=> $hobbie) {
-        print_r( "{$hobbie} <br> ");
-    }
-
-    ?>
-</td>
-<td>
-    <?php 
-    foreach ($user->activities as $key=> $activitie) {
-      print_r( "{$activitie} <br>");
-    }
-            
-    ?>
-</td>
-
-            </tr>
-            <?php }?>
-        </tbody>
-    </table>
+  <?= $table ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
